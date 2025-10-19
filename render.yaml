@@ -4,6 +4,7 @@ services:
   - type: web
     name: librarysystem
     env: docker
+    repo: https://github.com/Maheshdonthala/Library_system.git
     # If you want Render to build from Dockerfile in root, leave buildCommand empty.
     # Optional: specify the Dockerfile path or docker build context
     dockerfilePath: Dockerfile
@@ -18,4 +19,4 @@ services:
       - key: MONGODB_URI
         value: "${MONGODB_URI}"
       - key: PORT
-        value: "${PORT:8080}"
+        value: "8080"
