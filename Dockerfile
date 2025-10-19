@@ -14,8 +14,8 @@ RUN mvn -B -DskipTests package
 # Run stage
 FROM eclipse-temurin:17-jdk-jammy
 WORKDIR /app
-ARG JAR_FILE=target/*.jar
-COPY --from=build /workspace/target/*.jar app.jar
+# Use the specific JAR file name for robustness
+COPY --from=build /workspace/target/librarysystem-0.0.1-SNAPSHOT.jar app.jar
 # Pass the MongoDB DNS resolver explicitly as a JVM argument in the exec form
 # to avoid shell quoting/expansion issues that can prevent the driver from
 # seeing the property in some container environments.
