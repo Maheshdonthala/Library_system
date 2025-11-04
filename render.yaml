@@ -16,7 +16,9 @@ services:
     healthCheckPath: /actuator/health
     # Env vars can be set in the Render dashboard; do not commit secrets here.
     envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: "prod"
       - key: MONGODB_URI
-        value: "${MONGODB_URI}"
+        sync: false  # set this securely in Render dashboard
       - key: PORT
         value: "8080"
