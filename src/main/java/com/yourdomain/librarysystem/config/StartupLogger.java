@@ -29,5 +29,6 @@ public class StartupLogger {
         } else {
             logger.info("spring.data.mongodb.uri is not set; using default");
         }
+        logger.info("Library System started successfully with MongoDB Atlas");
     }
 }
